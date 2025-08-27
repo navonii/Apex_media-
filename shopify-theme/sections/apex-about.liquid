@@ -1,0 +1,710 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .apex-about-{{ section.id }} {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  }
+
+  .apex-about-container-{{ section.id }} {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .apex-about-container-{{ section.id }} {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-about-container-{{ section.id }} {
+      padding: 0 2rem;
+    }
+  }
+
+  .apex-about-header-{{ section.id }} {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .apex-about-title-{{ section.id }} {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-about-title-{{ section.id }} {
+      font-size: 3rem;
+    }
+  }
+
+  .apex-about-title-highlight-{{ section.id }} {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .apex-about-description-{{ section.id }} {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .apex-about-stats-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .apex-about-stats-{{ section.id }} {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .apex-about-stat-card-{{ section.id }} {
+    text-align: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .apex-about-stat-card-{{ section.id }}:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+
+  .apex-about-stat-icon-wrapper-{{ section.id }} {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .apex-about-stat-icon-{{ section.id }} {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    border-radius: 50%;
+  }
+
+  .apex-about-stat-icon-{{ section.id }} svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .apex-about-stat-number-{{ section.id }} {
+    font-size: 1.875rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .apex-about-stat-label-{{ section.id }} {
+    color: rgb(75 85 99);
+    font-weight: 500;
+  }
+
+  .apex-about-mission-{{ section.id }} {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 4rem;
+    border: 1px solid rgb(229 231 235);
+  }
+
+  .apex-about-mission-content-{{ section.id }} {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .apex-about-mission-title-{{ section.id }} {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-about-mission-text-{{ section.id }} {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .apex-about-badges-{{ section.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .apex-about-badge-{{ section.id }} {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    color: rgb(194 65 12);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+
+  .apex-about-team-{{ section.id }} {
+    margin-bottom: 5rem;
+  }
+
+  .apex-about-team-header-{{ section.id }} {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .apex-about-team-title-{{ section.id }} {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1rem;
+  }
+
+  .apex-about-team-description-{{ section.id }} {
+    color: rgb(75 85 99);
+    font-size: 1.125rem;
+  }
+
+  .apex-about-team-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .apex-about-team-grid-{{ section.id }} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .apex-about-team-card-{{ section.id }} {
+    background: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .apex-about-team-card-{{ section.id }}:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+
+  .apex-about-team-image-wrapper-{{ section.id }} {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .apex-about-team-image-{{ section.id }} {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 107, 53, 0.1);
+    transition: border-color 0.3s ease;
+  }
+
+  .apex-about-team-card-{{ section.id }}:hover .apex-about-team-image-{{ section.id }} {
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+
+  .apex-about-team-name-{{ section.id }} {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 0.5rem;
+  }
+
+  .apex-about-team-position-{{ section.id }} {
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .apex-about-team-bio-{{ section.id }} {
+    color: rgb(75 85 99);
+    line-height: 1.7;
+  }
+
+  .apex-about-values-{{ section.id }} {
+    margin-top: 5rem;
+  }
+
+  .apex-about-values-header-{{ section.id }} {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .apex-about-values-title-{{ section.id }} {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1rem;
+  }
+
+  .apex-about-values-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .apex-about-values-grid-{{ section.id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-about-values-grid-{{ section.id }} {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .apex-about-value-card-{{ section.id }} {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    transition: all 0.3s ease;
+  }
+
+  .apex-about-value-card-{{ section.id }}:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .apex-about-value-title-{{ section.id }} {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 0.75rem;
+  }
+
+  .apex-about-value-description-{{ section.id }} {
+    color: rgb(75 85 99);
+  }
+{%- endstyle -%}
+
+<section class="apex-about-{{ section.id }} section-{{ section.id }}-padding">
+  <div class="apex-about-container-{{ section.id }}">
+    <div class="apex-about-header-{{ section.id }}">
+      {%- if section.settings.title != blank -%}
+        <h2 class="apex-about-title-{{ section.id }}">
+          {{ section.settings.title_prefix }}
+          <span class="apex-about-title-highlight-{{ section.id }}">{{ section.settings.title_highlight }}</span>
+          {{ section.settings.title_suffix }}
+        </h2>
+      {%- endif -%}
+      
+      {%- if section.settings.description != blank -%}
+        <p class="apex-about-description-{{ section.id }}">
+          {{ section.settings.description }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_stats -%}
+      <div class="apex-about-stats-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'stat' -%}
+              <div class="apex-about-stat-card-{{ section.id }}" {{ block.shopify_attributes }}>
+                <div class="apex-about-stat-icon-wrapper-{{ section.id }}">
+                  <div class="apex-about-stat-icon-{{ section.id }}">
+                    {{ block.settings.icon }}
+                  </div>
+                </div>
+                <div class="apex-about-stat-number-{{ section.id }}">{{ block.settings.number }}</div>
+                <div class="apex-about-stat-label-{{ section.id }}">{{ block.settings.label }}</div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_mission -%}
+      <div class="apex-about-mission-{{ section.id }}">
+        <div class="apex-about-mission-content-{{ section.id }}">
+          {%- if section.settings.mission_title != blank -%}
+            <h3 class="apex-about-mission-title-{{ section.id }}">{{ section.settings.mission_title }}</h3>
+          {%- endif -%}
+          
+          {%- if section.settings.mission_text != blank -%}
+            <p class="apex-about-mission-text-{{ section.id }}">{{ section.settings.mission_text }}</p>
+          {%- endif -%}
+          
+          {%- if section.settings.mission_badges != blank -%}
+            <div class="apex-about-badges-{{ section.id }}">
+              {%- assign badges = section.settings.mission_badges | split: ',' -%}
+              {%- for badge in badges -%}
+                <span class="apex-about-badge-{{ section.id }}">{{ badge | strip }}</span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_team -%}
+      <div class="apex-about-team-{{ section.id }}">
+        <div class="apex-about-team-header-{{ section.id }}">
+          <h3 class="apex-about-team-title-{{ section.id }}">{{ section.settings.team_title | default: 'Meet Our Team' }}</h3>
+          <p class="apex-about-team-description-{{ section.id }}">{{ section.settings.team_description | default: 'The creative minds behind your success' }}</p>
+        </div>
+
+        <div class="apex-about-team-grid-{{ section.id }}">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'team_member' -%}
+                <div class="apex-about-team-card-{{ section.id }}" {{ block.shopify_attributes }}>
+                  {%- if block.settings.image != blank -%}
+                    <div class="apex-about-team-image-wrapper-{{ section.id }}">
+                      {{ block.settings.image | image_url: width: 150 | image_tag: loading: 'lazy', class: 'apex-about-team-image-' | append: section.id, alt: block.settings.name }}
+                    </div>
+                  {%- endif -%}
+                  
+                  {%- if block.settings.name != blank -%}
+                    <h4 class="apex-about-team-name-{{ section.id }}">{{ block.settings.name }}</h4>
+                  {%- endif -%}
+                  
+                  {%- if block.settings.position != blank -%}
+                    <p class="apex-about-team-position-{{ section.id }}">{{ block.settings.position }}</p>
+                  {%- endif -%}
+                  
+                  {%- if block.settings.bio != blank -%}
+                    <p class="apex-about-team-bio-{{ section.id }}">{{ block.settings.bio }}</p>
+                  {%- endif -%}
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_values -%}
+      <div class="apex-about-values-{{ section.id }}">
+        <div class="apex-about-values-header-{{ section.id }}">
+          <h3 class="apex-about-values-title-{{ section.id }}">{{ section.settings.values_title | default: 'Why Choose Us?' }}</h3>
+        </div>
+        
+        <div class="apex-about-values-grid-{{ section.id }}">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'value' -%}
+                <div class="apex-about-value-card-{{ section.id }}" {{ block.shopify_attributes }}>
+                  <h4 class="apex-about-value-title-{{ section.id }}">{{ block.settings.title }}</h4>
+                  <p class="apex-about-value-description-{{ section.id }}">{{ block.settings.description }}</p>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Apex About Section",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_prefix",
+      "default": "About",
+      "label": "Title prefix"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "default": "Apex Media Design",
+      "label": "Title highlight"
+    },
+    {
+      "type": "text",
+      "id": "title_suffix",
+      "label": "Title suffix"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "default": "We're passionate about creating exceptional web experiences that drive business growth. Our team combines creativity, technical expertise, and strategic thinking to deliver outstanding results.",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stats",
+      "default": true,
+      "label": "Show statistics"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mission",
+      "default": true,
+      "label": "Show mission section"
+    },
+    {
+      "type": "text",
+      "id": "mission_title",
+      "default": "Our Mission",
+      "label": "Mission title"
+    },
+    {
+      "type": "textarea",
+      "id": "mission_text",
+      "default": "To empower businesses of all sizes with professional web solutions that not only look stunning but also deliver measurable results. Whether you need a custom-built website or a premium template, we're committed to helping you succeed in the digital landscape.",
+      "label": "Mission text"
+    },
+    {
+      "type": "text",
+      "id": "mission_badges",
+      "default": "Innovation, Quality, Results, Support",
+      "label": "Mission badges (comma-separated)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_team",
+      "default": true,
+      "label": "Show team section"
+    },
+    {
+      "type": "text",
+      "id": "team_title",
+      "default": "Meet Our Team",
+      "label": "Team section title"
+    },
+    {
+      "type": "text",
+      "id": "team_description",
+      "default": "The creative minds behind your success",
+      "label": "Team section description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_values",
+      "default": true,
+      "label": "Show values section"
+    },
+    {
+      "type": "text",
+      "id": "values_title",
+      "default": "Why Choose Us?",
+      "label": "Values section title"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistic",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon SVG",
+          "default": "<svg fill='none' stroke='currentColor' viewBox='0 0 24 24' style='color: rgb(59 130 246);'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'></path></svg>"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "default": "500+",
+          "label": "Number"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "default": "Happy Clients",
+          "label": "Label"
+        }
+      ]
+    },
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "default": "John Doe",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "position",
+          "default": "Founder & Lead Designer",
+          "label": "Position"
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "default": "10+ years experience in web design and development with expertise in modern frameworks.",
+          "label": "Bio"
+        }
+      ]
+    },
+    {
+      "type": "value",
+      "name": "Value Proposition",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Expert Team",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Skilled professionals with years of experience",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apex About Section",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "500+",
+            "label": "Happy Clients"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "98%",
+            "label": "Success Rate"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "5+",
+            "label": "Years Experience"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "24/7",
+            "label": "Support"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "John Doe",
+            "position": "Founder & Lead Designer",
+            "bio": "10+ years experience in web design and development with expertise in modern frameworks."
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Jane Smith",
+            "position": "Frontend Developer",
+            "bio": "Specializes in creating responsive, interactive user interfaces using React and modern CSS."
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Alex Chen",
+            "position": "Backend Developer",
+            "bio": "Expert in server-side development, API design, and database optimization."
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "title": "Expert Team",
+            "description": "Skilled professionals with years of experience"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "title": "Custom Solutions",
+            "description": "Tailored approaches for every unique business"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "title": "Fast Delivery",
+            "description": "Quick turnaround times without compromising quality"
+          }
+        },
+        {
+          "type": "value",
+          "settings": {
+            "title": "Ongoing Support",
+            "description": "Continuous support and maintenance services"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
