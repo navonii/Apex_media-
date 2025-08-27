@@ -2,30 +2,1060 @@
   The home page template for Apex Media Design theme
 {% endcomment %}
 
-{%- liquid
-  assign hero_section = section.settings.hero_section
-  assign services_section = section.settings.services_section  
-  assign about_section = section.settings.about_section
-  assign contact_section = section.settings.contact_section
--%}
+<div class="template-index">
+  <section class="apex-hero">
+    <div class="apex-hero-content">
+      <div class="apex-hero-text">
+        <div class="apex-hero-badge">
+          ⭐ Trusted by 500+ Businesses
+        </div>
+        
+        <h1 class="apex-hero-title">
+          Professional Web Design
+        </h1>
+        
+        <h2 class="apex-hero-subtitle">
+          SERVICES & TEMPLATES
+        </h2>
+        
+        <p class="apex-hero-description">
+          From custom websites to premium templates - we deliver stunning, conversion-focused web solutions that drive results for your business.
+        </p>
+        
+        <div class="apex-hero-buttons">
+          <a href="#contact" class="apex-hero-btn-primary">
+            GET FREE QUOTE
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-left: 8px;">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          
+          <a href="#services" class="apex-hero-btn-secondary">
+            View Services
+          </a>
+        </div>
+        
+        <div class="apex-hero-stats">
+          <div class="apex-hero-stat">
+            <div class="apex-hero-stat-number">500+</div>
+            <div class="apex-hero-stat-label">Projects Completed</div>
+          </div>
+          <div class="apex-hero-stat">
+            <div class="apex-hero-stat-number">98%</div>
+            <div class="apex-hero-stat-label">Client Satisfaction</div>
+          </div>
+          <div class="apex-hero-stat">
+            <div class="apex-hero-stat-number">24/7</div>
+            <div class="apex-hero-stat-label">Support Available</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="apex-hero-visual">
+        <div class="apex-hero-card">
+          <div class="apex-hero-mockup">
+            <div class="apex-hero-mockup-header">
+              <div class="apex-hero-mockup-dot"></div>
+              <div class="apex-hero-mockup-dot"></div>
+              <div class="apex-hero-mockup-dot"></div>
+            </div>
+            <div class="apex-hero-mockup-content">
+              <div class="apex-hero-mockup-bar"></div>
+              <div class="apex-hero-mockup-bar"></div>
+              <div class="apex-hero-mockup-bar"></div>
+            </div>
+          </div>
+          
+          <div class="apex-hero-stats-grid">
+            <div class="apex-hero-stat-card">
+              <div class="apex-hero-stat-icon">↗</div>
+              <div class="apex-hero-stat-text">Performance</div>
+            </div>
+            <div class="apex-hero-stat-card">
+              <div class="apex-hero-stat-icon">⚡</div>
+              <div class="apex-hero-stat-text">Speed</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="apex-hero-floating"></div>
+        <div class="apex-hero-floating"></div>
+      </div>
+    </div>
+  </section>
 
-{% section 'apex-hero' %}
-{% section 'apex-services' %}
-{% section 'apex-about' %}
-{% section 'apex-contact' %}
+  <!-- Simple Services Section -->
+  <section id="services" class="apex-services">
+    <div class="apex-services-container">
+      <div class="apex-services-header">
+        <h2 class="apex-services-title">
+          Our <span class="apex-services-title-highlight">Services</span>
+        </h2>
+        
+        <p class="apex-services-description">
+          From custom development to ready-made templates, we provide comprehensive web solutions that help your business grow and succeed online.
+        </p>
+      </div>
 
-{% schema %}
-{
-  "name": "Homepage",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Apex Media Design Homepage"
-    },
-    {
-      "type": "paragraph",
-      "content": "Customize your homepage sections using the theme editor. Add sections above and below this content."
+      <div class="apex-services-grid">
+        <div class="apex-service-card">
+          <div class="apex-service-header">
+            <div class="apex-service-icon">
+              <svg fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z'></path></svg>
+            </div>
+            <div>
+              <h3 class="apex-service-title">Custom Web Design</h3>
+            </div>
+          </div>
+          
+          <p class="apex-service-description">
+            Bespoke website design and development tailored to your brand and business goals.
+          </p>
+          
+          <div class="apex-service-features">
+            <div class="apex-service-feature">
+              <svg class="apex-service-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="apex-service-feature-text">Responsive Design</span>
+            </div>
+            <div class="apex-service-feature">
+              <svg class="apex-service-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="apex-service-feature-text">SEO Optimized</span>
+            </div>
+          </div>
+          
+          <a href="#contact" class="apex-service-button">
+            Learn More
+          </a>
+        </div>
+
+        <div class="apex-service-card">
+          <div class="apex-service-header">
+            <div class="apex-service-icon">
+              <svg fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'></path></svg>
+            </div>
+            <div>
+              <h3 class="apex-service-title">E-commerce Solutions</h3>
+            </div>
+          </div>
+          
+          <p class="apex-service-description">
+            Complete online store development with payment integration and inventory management.
+          </p>
+          
+          <div class="apex-service-features">
+            <div class="apex-service-feature">
+              <svg class="apex-service-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="apex-service-feature-text">Payment Gateway</span>
+            </div>
+            <div class="apex-service-feature">
+              <svg class="apex-service-feature-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="apex-service-feature-text">Mobile Optimized</span>
+            </div>
+          </div>
+          
+          <a href="#contact" class="apex-service-button">
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <div class="apex-services-cta">
+        <h3 class="apex-services-cta-title">Ready to Get Started?</h3>
+        <p class="apex-services-cta-description">Let's discuss your project and create something amazing together.</p>
+        <a href="#contact" class="apex-services-cta-button">
+          Start Your Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Contact Section -->
+  <section id="contact" class="apex-contact">
+    <div class="apex-contact-container">
+      <div class="apex-contact-header">
+        <h2 class="apex-contact-title">
+          Get In <span class="apex-contact-title-highlight">Touch</span>
+        </h2>
+        
+        <p class="apex-contact-description">
+          Ready to transform your online presence? Let's discuss your project and create something amazing together.
+        </p>
+      </div>
+
+      <div class="apex-contact-content">
+        <!-- Contact Form -->
+        <div class="apex-contact-form-card">
+          <div class="apex-contact-form-header">
+            <h3 class="apex-contact-form-title">Send us a message</h3>
+            <p class="apex-contact-form-subtitle">Fill out the form and we'll get back to you within 24 hours</p>
+          </div>
+
+          <form class="apex-contact-form" action="/contact#contact_form" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="form_type" value="contact">
+            <input type="hidden" name="utf8" value="✓">
+            
+            <div class="apex-contact-form-row">
+              <div class="apex-contact-form-group">
+                <label for="ContactFormName" class="apex-contact-form-label">Name *</label>
+                <input 
+                  type="text" 
+                  id="ContactFormName" 
+                  name="contact[name]" 
+                  required 
+                  class="apex-contact-form-input"
+                  placeholder="Your full name"
+                >
+              </div>
+              <div class="apex-contact-form-group">
+                <label for="ContactFormEmail" class="apex-contact-form-label">Email *</label>
+                <input 
+                  type="email" 
+                  id="ContactFormEmail" 
+                  name="contact[email]" 
+                  required 
+                  class="apex-contact-form-input"
+                  placeholder="your@email.com"
+                >
+              </div>
+            </div>
+
+            <div class="apex-contact-form-group">
+              <label for="ContactFormMessage" class="apex-contact-form-label">Message *</label>
+              <textarea 
+                id="ContactFormMessage" 
+                name="contact[body]" 
+                required 
+                class="apex-contact-form-input apex-contact-form-textarea"
+                placeholder="Tell us about your project requirements..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="apex-contact-form-button">
+              Send Message
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="apex-contact-info">
+          <div class="apex-contact-info-card">
+            <div class="apex-contact-info-header">
+              <h3 class="apex-contact-info-title">Contact Information</h3>
+              <p class="apex-contact-info-subtitle">Reach out to us directly</p>
+            </div>
+
+            <div class="apex-contact-info-list">
+              <div class="apex-contact-info-item">
+                <div class="apex-contact-info-icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                </div>
+                <div class="apex-contact-info-text">
+                  <div class="apex-contact-info-label">Phone</div>
+                  <div class="apex-contact-info-value">+1 (555) 123-4567</div>
+                </div>
+              </div>
+
+              <div class="apex-contact-info-item">
+                <div class="apex-contact-info-icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <div class="apex-contact-info-text">
+                  <div class="apex-contact-info-label">Email</div>
+                  <div class="apex-contact-info-value">contact@apexmediadesign.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  /* Hero Section Styles */
+  .apex-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    overflow: hidden;
+    padding: 80px 0 40px;
+  }
+
+  .apex-hero-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-hero-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 0 2rem;
     }
-  ]
-}
-{% endschema %}
+  }
+
+  .apex-hero-text {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-hero-text {
+      text-align: left;
+    }
+  }
+
+  .apex-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    color: rgb(194 65 12);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-hero-title {
+      font-size: 4.5rem;
+    }
+  }
+
+  .apex-hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-hero-description {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    max-width: 32rem;
+  }
+
+  .apex-hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .apex-hero-buttons {
+      flex-direction: row;
+    }
+  }
+
+  .apex-hero-btn-primary {
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apex-hero-btn-primary:hover {
+    background: linear-gradient(135deg, #E55A2B 0%, #C2185B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+  }
+
+  .apex-hero-btn-secondary {
+    border: 2px solid #FF6B35;
+    color: #FF6B35;
+    background: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apex-hero-btn-secondary:hover {
+    background: #FF6B35;
+    color: white;
+  }
+
+  .apex-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .apex-hero-stat {
+    text-align: center;
+  }
+
+  .apex-hero-stat-number {
+    font-size: 1.875rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .apex-hero-stat-label {
+    color: rgb(75 85 99);
+    font-weight: 500;
+  }
+
+  .apex-hero-visual {
+    position: relative;
+  }
+
+  .apex-hero-card {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgb(229 231 235);
+  }
+
+  .apex-hero-mockup {
+    background: rgb(17 24 39);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-hero-mockup-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .apex-hero-mockup-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+
+  .apex-hero-mockup-dot:nth-child(1) { background: rgb(248 113 113); }
+  .apex-hero-mockup-dot:nth-child(2) { background: rgb(250 204 21); }
+  .apex-hero-mockup-dot:nth-child(3) { background: rgb(34 197 94); }
+
+  .apex-hero-mockup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .apex-hero-mockup-bar {
+    height: 0.75rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+  }
+
+  .apex-hero-mockup-bar:nth-child(1) { width: 75%; }
+  .apex-hero-mockup-bar:nth-child(2) { width: 100%; background: rgb(75 85 99); height: 0.5rem; }
+  .apex-hero-mockup-bar:nth-child(3) { width: 66%; background: rgb(75 85 99); height: 0.5rem; }
+
+  .apex-hero-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .apex-hero-stat-card {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .apex-hero-stat-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF6B35;
+    margin-bottom: 0.5rem;
+  }
+
+  .apex-hero-stat-text {
+    font-size: 0.875rem;
+    color: rgb(75 85 99);
+  }
+
+  .apex-hero-floating {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    filter: blur(0.5rem);
+    opacity: 0.6;
+    animation: bounce 2s infinite;
+  }
+
+  .apex-hero-floating:nth-child(1) {
+    top: -1rem;
+    right: -1rem;
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+  }
+
+  .apex-hero-floating:nth-child(2) {
+    bottom: -1rem;
+    left: -1rem;
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.8) 0%, rgba(156, 39, 176, 0.8) 100%);
+    animation-delay: 1s;
+  }
+
+  /* Services Section Styles */
+  .apex-services {
+    padding: 5rem 0;
+    background: white;
+  }
+
+  .apex-services-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .apex-services-container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-services-container {
+      padding: 0 2rem;
+    }
+  }
+
+  .apex-services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .apex-services-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-services-title {
+      font-size: 3rem;
+    }
+  }
+
+  .apex-services-title-highlight {
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .apex-services-description {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .apex-services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .apex-services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .apex-service-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .apex-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+
+  .apex-service-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .apex-service-icon {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .apex-service-card:hover .apex-service-icon {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(233, 30, 99, 0.2) 100%);
+  }
+
+  .apex-service-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: #FF6B35;
+  }
+
+  .apex-service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    transition: color 0.3s ease;
+  }
+
+  .apex-service-card:hover .apex-service-title {
+    color: rgb(234 88 12);
+  }
+
+  .apex-service-description {
+    color: rgb(75 85 99);
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .apex-service-features {
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-service-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .apex-service-feature-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: rgb(34 197 94);
+    flex-shrink: 0;
+  }
+
+  .apex-service-feature-text {
+    color: rgb(55 65 81);
+  }
+
+  .apex-service-button {
+    width: 100%;
+    border: 2px solid #FF6B35;
+    color: #FF6B35;
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apex-service-button:hover {
+    background: #FF6B35;
+    color: white;
+  }
+
+  .apex-services-cta {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .apex-services-cta-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1rem;
+  }
+
+  .apex-services-cta-description {
+    color: rgb(75 85 99);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .apex-services-cta-button {
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apex-services-cta-button:hover {
+    background: linear-gradient(135deg, #E55A2B 0%, #C2185B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+  }
+
+  /* Contact Section Styles */
+  .apex-contact {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+  }
+
+  .apex-contact-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .apex-contact-container {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-contact-container {
+      padding: 0 2rem;
+    }
+  }
+
+  .apex-contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .apex-contact-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-contact-title {
+      font-size: 3rem;
+    }
+  }
+
+  .apex-contact-title-highlight {
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .apex-contact-description {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .apex-contact-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-contact-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .apex-contact-form-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .apex-contact-form-card:hover {
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+
+  .apex-contact-form-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-contact-form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 0.5rem;
+  }
+
+  .apex-contact-form-subtitle {
+    color: rgb(107 114 128);
+  }
+
+  .apex-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .apex-contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .apex-contact-form-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .apex-contact-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .apex-contact-form-label {
+    display: block;
+    font-weight: 500;
+    color: rgb(55 65 81);
+    margin-bottom: 0.5rem;
+  }
+
+  .apex-contact-form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid rgb(229 231 235);
+    border-radius: 0.5rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .apex-contact-form-input:focus {
+    outline: none;
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  }
+
+  .apex-contact-form-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .apex-contact-form-button {
+    width: 100%;
+    background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .apex-contact-form-button:hover {
+    background: linear-gradient(135deg, #E55A2B 0%, #C2185B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+  }
+
+  .apex-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .apex-contact-info-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .apex-contact-info-card:hover {
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+
+  .apex-contact-info-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-contact-info-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 0.5rem;
+  }
+
+  .apex-contact-info-subtitle {
+    color: rgb(107 114 128);
+  }
+
+  .apex-contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .apex-contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .apex-contact-info-icon {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    border-radius: 0.75rem;
+  }
+
+  .apex-contact-info-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #FF6B35;
+  }
+
+  .apex-contact-info-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .apex-contact-info-label {
+    font-weight: 500;
+    color: rgb(17 24 39);
+  }
+
+  .apex-contact-info-value {
+    color: rgb(75 85 99);
+  }
+
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+      transform: translate3d(0, -10px, 0);
+    }
+    70% {
+      transform: translate3d(0, -5px, 0);
+    }
+    90% {
+      transform: translate3d(0, -2px, 0);
+    }
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .apex-hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .apex-services-title, .apex-contact-title {
+      font-size: 2rem;
+    }
+    
+    .apex-hero-buttons, .apex-contact-form-row {
+      flex-direction: column;
+    }
+    
+    .apex-hero-stats {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Smooth scrolling for anchor links
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>
