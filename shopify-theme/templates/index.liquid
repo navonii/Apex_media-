@@ -1,0 +1,31 @@
+{% comment %}
+  The home page template for Apex Media Design theme
+{% endcomment %}
+
+{%- liquid
+  assign hero_section = section.settings.hero_section
+  assign services_section = section.settings.services_section  
+  assign about_section = section.settings.about_section
+  assign contact_section = section.settings.contact_section
+-%}
+
+{% section 'apex-hero' %}
+{% section 'apex-services' %}
+{% section 'apex-about' %}
+{% section 'apex-contact' %}
+
+{% schema %}
+{
+  "name": "Homepage",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Apex Media Design Homepage"
+    },
+    {
+      "type": "paragraph",
+      "content": "Customize your homepage sections using the theme editor. Add sections above and below this content."
+    }
+  ]
+}
+{% endschema %}

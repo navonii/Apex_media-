@@ -1,0 +1,474 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .apex-services-{{ section.id }} {
+    padding: 5rem 0;
+    background: white;
+  }
+
+  .apex-services-container-{{ section.id }} {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .apex-services-container-{{ section.id }} {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-services-container-{{ section.id }} {
+      padding: 0 2rem;
+    }
+  }
+
+  .apex-services-header-{{ section.id }} {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .apex-services-title-{{ section.id }} {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-services-title-{{ section.id }} {
+      font-size: 3rem;
+    }
+  }
+
+  .apex-services-title-highlight-{{ section.id }} {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .apex-services-description-{{ section.id }} {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .apex-services-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .apex-services-grid-{{ section.id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .apex-service-card-{{ section.id }} {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    group: hover;
+  }
+
+  .apex-service-card-{{ section.id }}:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 107, 53, 0.2);
+  }
+
+  .apex-service-header-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .apex-service-icon-{{ section.id }} {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .apex-service-card-{{ section.id }}:hover .apex-service-icon-{{ section.id }} {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(233, 30, 99, 0.2) 100%);
+  }
+
+  .apex-service-icon-{{ section.id }} svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-primary);
+  }
+
+  .apex-service-title-{{ section.id }} {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    transition: color 0.3s ease;
+  }
+
+  .apex-service-card-{{ section.id }}:hover .apex-service-title-{{ section.id }} {
+    color: rgb(234 88 12);
+  }
+
+  .apex-service-description-{{ section.id }} {
+    color: rgb(75 85 99);
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .apex-service-features-{{ section.id }} {
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-service-feature-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .apex-service-feature-icon-{{ section.id }} {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: rgb(34 197 94);
+    flex-shrink: 0;
+  }
+
+  .apex-service-feature-text-{{ section.id }} {
+    color: rgb(55 65 81);
+  }
+
+  .apex-service-button-{{ section.id }} {
+    width: 100%;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apex-service-button-{{ section.id }}:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .apex-services-cta-{{ section.id }} {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .apex-services-cta-title-{{ section.id }} {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1rem;
+  }
+
+  .apex-services-cta-description-{{ section.id }} {
+    color: rgb(75 85 99);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .apex-services-cta-button-{{ section.id }} {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .apex-services-cta-button-{{ section.id }}:hover {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+  }
+{%- endstyle -%}
+
+<section class="apex-services-{{ section.id }} section-{{ section.id }}-padding">
+  <div class="apex-services-container-{{ section.id }}">
+    <div class="apex-services-header-{{ section.id }}">
+      {%- if section.settings.title != blank -%}
+        <h2 class="apex-services-title-{{ section.id }}">
+          {{ section.settings.title_prefix }}
+          <span class="apex-services-title-highlight-{{ section.id }}">{{ section.settings.title_highlight }}</span>
+          {{ section.settings.title_suffix }}
+        </h2>
+      {%- endif -%}
+      
+      {%- if section.settings.description != blank -%}
+        <p class="apex-services-description-{{ section.id }}">
+          {{ section.settings.description }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="apex-services-grid-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'service' -%}
+            <div class="apex-service-card-{{ section.id }}" {{ block.shopify_attributes }}>
+              <div class="apex-service-header-{{ section.id }}">
+                {%- if block.settings.icon != blank -%}
+                  <div class="apex-service-icon-{{ section.id }}">
+                    {{ block.settings.icon }}
+                  </div>
+                {%- endif -%}
+                <div>
+                  <h3 class="apex-service-title-{{ section.id }}">{{ block.settings.title }}</h3>
+                </div>
+              </div>
+              
+              {%- if block.settings.description != blank -%}
+                <p class="apex-service-description-{{ section.id }}">
+                  {{ block.settings.description }}
+                </p>
+              {%- endif -%}
+              
+              {%- if block.settings.features != blank -%}
+                <div class="apex-service-features-{{ section.id }}">
+                  {%- assign features = block.settings.features | split: ',' -%}
+                  {%- for feature in features -%}
+                    <div class="apex-service-feature-{{ section.id }}">
+                      <svg class="apex-service-feature-icon-{{ section.id }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span class="apex-service-feature-text-{{ section.id }}">{{ feature | strip }}</span>
+                    </div>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+              
+              <a href="{{ block.settings.button_link | default: '#contact' }}" class="apex-service-button-{{ section.id }}">
+                {{ block.settings.button_text | default: 'Learn More' }}
+              </a>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_cta -%}
+      <div class="apex-services-cta-{{ section.id }}">
+        {%- if section.settings.cta_title != blank -%}
+          <h3 class="apex-services-cta-title-{{ section.id }}">{{ section.settings.cta_title }}</h3>
+        {%- endif -%}
+        
+        {%- if section.settings.cta_description != blank -%}
+          <p class="apex-services-cta-description-{{ section.id }}">{{ section.settings.cta_description }}</p>
+        {%- endif -%}
+        
+        {%- if section.settings.cta_button_text != blank -%}
+          <a href="{{ section.settings.cta_button_link | default: '#contact' }}" class="apex-services-cta-button-{{ section.id }}">
+            {{ section.settings.cta_button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Apex Services Section",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_prefix",
+      "default": "Our",
+      "label": "Title prefix"
+    },
+    {
+      "type": "text",
+      "id": "title_highlight",
+      "default": "Services",
+      "label": "Title highlight"
+    },
+    {
+      "type": "text",
+      "id": "title_suffix",
+      "label": "Title suffix"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "default": "From custom development to ready-made templates, we provide comprehensive web solutions that help your business grow and succeed online.",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "default": true,
+      "label": "Show call-to-action section"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "default": "Ready to Get Started?",
+      "label": "CTA title"
+    },
+    {
+      "type": "text",
+      "id": "cta_description",
+      "default": "Let's discuss your project and create something amazing together.",
+      "label": "CTA description"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "default": "Start Your Project",
+      "label": "CTA button text"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "CTA button link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon SVG",
+          "default": "<svg fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z'></path></svg>"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Custom Web Design",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "default": "Bespoke website design and development tailored to your brand and business goals.",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "features",
+          "default": "Responsive Design, SEO Optimized, CMS Integration, Custom Development",
+          "label": "Features (comma-separated)",
+          "info": "List features separated by commas"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "default": "Learn More",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apex Services Section",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Custom Web Design",
+            "description": "Bespoke website design and development tailored to your brand and business goals.",
+            "features": "Responsive Design, SEO Optimized, CMS Integration, Custom Development"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "E-commerce Solutions",
+            "description": "Complete online store development with payment integration and inventory management.",
+            "features": "Payment Gateway, Inventory System, Mobile Optimized, Analytics Dashboard"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Premium Templates",
+            "description": "Ready-to-use, professional website templates for quick deployment and customization.",
+            "features": "Instant Download, Easy Customization, Documentation Included, Lifetime Updates"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Website Maintenance",
+            "description": "Ongoing support and maintenance to keep your website secure, fast, and up-to-date.",
+            "features": "Security Updates, Performance Optimization, Content Updates, Technical Support"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

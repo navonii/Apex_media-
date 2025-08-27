@@ -1,0 +1,554 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .apex-hero-{{ section.id }} {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    overflow: hidden;
+  }
+
+  .apex-hero-background-{{ section.id }} {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .apex-hero-background-{{ section.id }}::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    width: 288px;
+    height: 288px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(233, 30, 99, 0.2) 100%);
+    border-radius: 50%;
+    filter: blur(48px);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .apex-hero-background-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    bottom: 80px;
+    right: 40px;
+    width: 384px;
+    height: 384px;
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.2) 0%, rgba(156, 39, 176, 0.2) 100%);
+    border-radius: 50%;
+    filter: blur(48px);
+    animation: pulse 3s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .apex-hero-content-{{ section.id }} {
+    position: relative;
+    z-index: 10;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding-top: 80px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-hero-content-{{ section.id }} {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 0 2rem;
+      padding-top: 80px;
+    }
+  }
+
+  .apex-hero-text-{{ section.id }} {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-hero-text-{{ section.id }} {
+      text-align: left;
+    }
+  }
+
+  .apex-hero-badge-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    color: rgb(194 65 12);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-hero-title-{{ section.id }} {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-hero-title-{{ section.id }} {
+      font-size: 4.5rem;
+    }
+  }
+
+  .apex-hero-subtitle-{{ section.id }} {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .apex-hero-subtitle-{{ section.id }} {
+      font-size: 1.875rem;
+    }
+  }
+
+  .apex-hero-description-{{ section.id }} {
+    font-size: 1.25rem;
+    color: rgb(75 85 99);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    max-width: 32rem;
+  }
+
+  .apex-hero-buttons-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .apex-hero-buttons-{{ section.id }} {
+      flex-direction: row;
+    }
+  }
+
+  .apex-hero-btn-primary-{{ section.id }} {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .apex-hero-btn-primary-{{ section.id }}:hover {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+  }
+
+  .apex-hero-btn-secondary-{{ section.id }} {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    background: white;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apex-hero-btn-secondary-{{ section.id }}:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .apex-hero-stats-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .apex-hero-stat-{{ section.id }} {
+    text-align: center;
+  }
+
+  .apex-hero-stat-number-{{ section.id }} {
+    font-size: 1.875rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .apex-hero-stat-label-{{ section.id }} {
+    color: rgb(75 85 99);
+    font-weight: 500;
+  }
+
+  .apex-hero-visual-{{ section.id }} {
+    position: relative;
+  }
+
+  .apex-hero-card-{{ section.id }} {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgb(229 231 235);
+  }
+
+  .apex-hero-mockup-{{ section.id }} {
+    background: rgb(17 24 39);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .apex-hero-mockup-header-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .apex-hero-mockup-dot-{{ section.id }} {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+
+  .apex-hero-mockup-dot-{{ section.id }}:nth-child(1) { background: rgb(248 113 113); }
+  .apex-hero-mockup-dot-{{ section.id }}:nth-child(2) { background: rgb(250 204 21); }
+  .apex-hero-mockup-dot-{{ section.id }}:nth-child(3) { background: rgb(34 197 94); }
+
+  .apex-hero-mockup-content-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .apex-hero-mockup-bar-{{ section.id }} {
+    height: 0.75rem;
+    border-radius: 0.25rem;
+    background: var(--gradient-primary);
+  }
+
+  .apex-hero-mockup-bar-{{ section.id }}:nth-child(1) { width: 75%; }
+  .apex-hero-mockup-bar-{{ section.id }}:nth-child(2) { width: 100%; background: rgb(75 85 99); height: 0.5rem; }
+  .apex-hero-mockup-bar-{{ section.id }}:nth-child(3) { width: 66%; background: rgb(75 85 99); height: 0.5rem; }
+
+  .apex-hero-stats-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .apex-hero-stat-card-{{ section.id }} {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .apex-hero-stat-icon-{{ section.id }} {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .apex-hero-stat-text-{{ section.id }} {
+    font-size: 0.875rem;
+    color: rgb(75 85 99);
+  }
+
+  .apex-hero-floating-{{ section.id }} {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    filter: blur(0.5rem);
+    opacity: 0.6;
+    animation: bounce 2s infinite;
+  }
+
+  .apex-hero-floating-{{ section.id }}:nth-child(1) {
+    top: -1rem;
+    right: -1rem;
+    background: var(--gradient-primary);
+  }
+
+  .apex-hero-floating-{{ section.id }}:nth-child(2) {
+    bottom: -1rem;
+    left: -1rem;
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.8) 0%, rgba(156, 39, 176, 0.8) 100%);
+    animation-delay: 1s;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% { transform: translate3d(0, 0, 0); }
+    40%, 43% { transform: translate3d(0, -10px, 0); }
+    70% { transform: translate3d(0, -5px, 0); }
+    90% { transform: translate3d(0, -2px, 0); }
+  }
+{%- endstyle -%}
+
+<section class="apex-hero-{{ section.id }} section-{{ section.id }}-padding">
+  <div class="apex-hero-background-{{ section.id }}"></div>
+  
+  <div class="apex-hero-content-{{ section.id }}">
+    <div class="apex-hero-text-{{ section.id }}">
+      {%- if section.settings.badge_text != blank -%}
+        <div class="apex-hero-badge-{{ section.id }}">
+          ⭐ {{ section.settings.badge_text }}
+        </div>
+      {%- endif -%}
+      
+      {%- if section.settings.title != blank -%}
+        <h1 class="apex-hero-title-{{ section.id }}">
+          {{ section.settings.title }}
+        </h1>
+      {%- endif -%}
+      
+      {%- if section.settings.subtitle != blank -%}
+        <h2 class="apex-hero-subtitle-{{ section.id }}">
+          {{ section.settings.subtitle }}
+        </h2>
+      {%- endif -%}
+      
+      {%- if section.settings.description != blank -%}
+        <p class="apex-hero-description-{{ section.id }}">
+          {{ section.settings.description }}
+        </p>
+      {%- endif -%}
+      
+      <div class="apex-hero-buttons-{{ section.id }}">
+        {%- if section.settings.button_primary_text != blank -%}
+          <a href="{{ section.settings.button_primary_link | default: '#contact' }}" class="apex-hero-btn-primary-{{ section.id }}">
+            {{ section.settings.button_primary_text }}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-left: 8px;">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        {%- endif -%}
+        
+        {%- if section.settings.button_secondary_text != blank -%}
+          <a href="{{ section.settings.button_secondary_link | default: '#services' }}" class="apex-hero-btn-secondary-{{ section.id }}">
+            {{ section.settings.button_secondary_text }}
+          </a>
+        {%- endif -%}
+      </div>
+      
+      <div class="apex-hero-stats-{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'stat' -%}
+              <div class="apex-hero-stat-{{ section.id }}" {{ block.shopify_attributes }}>
+                <div class="apex-hero-stat-number-{{ section.id }}">{{ block.settings.number }}</div>
+                <div class="apex-hero-stat-label-{{ section.id }}">{{ block.settings.label }}</div>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+    
+    <div class="apex-hero-visual-{{ section.id }}">
+      <div class="apex-hero-card-{{ section.id }}">
+        <div class="apex-hero-mockup-{{ section.id }}">
+          <div class="apex-hero-mockup-header-{{ section.id }}">
+            <div class="apex-hero-mockup-dot-{{ section.id }}"></div>
+            <div class="apex-hero-mockup-dot-{{ section.id }}"></div>
+            <div class="apex-hero-mockup-dot-{{ section.id }}"></div>
+          </div>
+          <div class="apex-hero-mockup-content-{{ section.id }}">
+            <div class="apex-hero-mockup-bar-{{ section.id }}"></div>
+            <div class="apex-hero-mockup-bar-{{ section.id }}"></div>
+            <div class="apex-hero-mockup-bar-{{ section.id }}"></div>
+          </div>
+        </div>
+        
+        <div class="apex-hero-stats-grid-{{ section.id }}">
+          <div class="apex-hero-stat-card-{{ section.id }}">
+            <div class="apex-hero-stat-icon-{{ section.id }}">↗</div>
+            <div class="apex-hero-stat-text-{{ section.id }}">Performance</div>
+          </div>
+          <div class="apex-hero-stat-card-{{ section.id }}">
+            <div class="apex-hero-stat-icon-{{ section.id }}">⚡</div>
+            <div class="apex-hero-stat-text-{{ section.id }}">Speed</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="apex-hero-floating-{{ section.id }}"></div>
+      <div class="apex-hero-floating-{{ section.id }}"></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Apex Hero Section",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "default": "Trusted by 500+ Businesses",
+      "label": "Badge text"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Professional Web Design",
+      "label": "Main title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "SERVICES & TEMPLATES",
+      "label": "Subtitle"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "default": "From custom websites to premium templates - we deliver stunning, conversion-focused web solutions that drive results for your business.",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_primary_text",
+      "default": "GET FREE QUOTE",
+      "label": "Primary button text"
+    },
+    {
+      "type": "url",
+      "id": "button_primary_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "button_secondary_text",
+      "default": "View Services",
+      "label": "Secondary button text"
+    },
+    {
+      "type": "url",
+      "id": "button_secondary_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistic",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "default": "500+",
+          "label": "Number"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "default": "Projects Completed",
+          "label": "Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apex Hero Section",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "500+",
+            "label": "Projects Completed"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "98%",
+            "label": "Client Satisfaction"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "24/7",
+            "label": "Support Available"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
