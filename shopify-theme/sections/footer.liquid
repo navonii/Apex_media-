@@ -1,0 +1,323 @@
+{%- style -%}
+  .footer-{{ section.id }} {
+    background: rgb(17, 24, 39);
+    color: rgb(243, 244, 246);
+    padding: 3rem 0 1rem;
+  }
+
+  .footer-container-{{ section.id }} {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    .footer-container-{{ section.id }} {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .footer-container-{{ section.id }} {
+      padding: 0 2rem;
+    }
+  }
+
+  .footer-content-{{ section.id }} {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .footer-content-{{ section.id }} {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .footer-section-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-section-title-{{ section.id }} {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .footer-links-{{ section.id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-link-{{ section.id }} {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-link-{{ section.id }} a {
+    color: rgb(156, 163, 175);
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .footer-link-{{ section.id }} a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer-bottom-{{ section.id }} {
+    border-top: 1px solid rgb(55, 65, 81);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copyright-{{ section.id }} {
+    color: rgb(156, 163, 175);
+  }
+
+  .footer-social-{{ section.id }} {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer-social-link-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgb(55, 65, 81);
+    border-radius: 0.5rem;
+    color: rgb(156, 163, 175);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .footer-social-link-{{ section.id }}:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .footer-newsletter-{{ section.id }} {
+    margin-bottom: 1rem;
+  }
+
+  .footer-newsletter-form-{{ section.id }} {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-newsletter-input-{{ section.id }} {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid rgb(75, 85, 99);
+    border-radius: 0.5rem;
+    background: rgb(31, 41, 55);
+    color: white;
+    font-family: inherit;
+  }
+
+  .footer-newsletter-input-{{ section.id }}::placeholder {
+    color: rgb(156, 163, 175);
+  }
+
+  .footer-newsletter-input-{{ section.id }}:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  .footer-newsletter-button-{{ section.id }} {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .footer-newsletter-button-{{ section.id }}:hover {
+    background: var(--gradient-primary-hover);
+  }
+
+  @media screen and (max-width: 767px) {
+    .footer-bottom-{{ section.id }} {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+{%- endstyle -%}
+
+<footer class="footer-{{ section.id }}">
+  <div class="footer-container-{{ section.id }}">
+    <div class="footer-content-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'link_list' -%}
+            <div class="footer-section-{{ section.id }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.heading != blank -%}
+                <h3 class="footer-section-title-{{ section.id }}">{{ block.settings.heading }}</h3>
+              {%- endif -%}
+              {%- if linklists[block.settings.menu].links.size > 0 -%}
+                <ul class="footer-links-{{ section.id }}">
+                  {%- for link in linklists[block.settings.menu].links -%}
+                    <li class="footer-link-{{ section.id }}">
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </div>
+          {%- when 'brand_information' -%}
+            <div class="footer-section-{{ section.id }}" {{ block.shopify_attributes }}>
+              <h3 class="footer-section-title-{{ section.id }}">{{ shop.name }}</h3>
+              {%- if shop.description != blank -%}
+                <p style="color: rgb(156, 163, 175); margin-bottom: 1rem;">{{ shop.description }}</p>
+              {%- endif -%}
+              
+              {%- if block.settings.show_social and settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_instagram_link != blank -%}
+                <div class="footer-social-{{ section.id }}">
+                  {%- if settings.social_facebook_link != blank -%}
+                    <a href="{{ settings.social_facebook_link }}" class="footer-social-link-{{ section.id }}" target="_blank">
+                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      </svg>
+                    </a>
+                  {%- endif -%}
+                  {%- if settings.social_twitter_link != blank -%}
+                    <a href="{{ settings.social_twitter_link }}" class="footer-social-link-{{ section.id }}" target="_blank">
+                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                      </svg>
+                    </a>
+                  {%- endif -%}
+                  {%- if settings.social_instagram_link != blank -%}
+                    <a href="{{ settings.social_instagram_link }}" class="footer-social-link-{{ section.id }}" target="_blank">
+                      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.017 0C8.396 0 7.89.011 7.55.058c-2.42.11-3.76.492-4.632.964-.725.281-1.348.635-1.966 1.253C.33 2.897.018 3.52.058 4.245c.04.334.015.719.058 1.878C.058 7.89.058 8.396.058 12.017c0 3.622.058 4.128.058 5.49.058 1.159.058 1.544.058 1.878.04.725.272 1.348.635 1.966.618.618 1.241.933 1.966 1.253.872.472 2.212.854 4.632.964.34.047.846.058 1.189.058 3.622 0 4.128-.058 5.49-.058 1.159-.058 1.544-.058 1.878-.058.725-.04 1.348-.272 1.966-.635.618-.618.933-1.241 1.253-1.966.472-.872.854-2.212.964-4.632.047-.34.058-.846.058-1.189 0-3.622-.058-4.128-.058-5.49-.058-1.159-.058-1.544-.058-1.878C23.94 2.62 23.74 1.997 23.377 1.379 22.759.761 22.136.446 21.411.126 20.539-.346 19.199-.728 16.779-.838c-.34-.047-.846-.058-1.189-.058C11.968-.058 11.462-.058 12.017 0zm0 2.158c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 3.653c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.757 6.163 6.162 6.163 3.405 0 6.162-2.758 6.162-6.163 0-3.403-2.757-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                      </svg>
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- when 'newsletter' -%}
+            <div class="footer-section-{{ section.id }}" {{ block.shopify_attributes }}>
+              <h3 class="footer-section-title-{{ section.id }}">{{ block.settings.heading | default: 'Newsletter' }}</h3>
+              <p style="color: rgb(156, 163, 175); margin-bottom: 1rem;">{{ block.settings.subtext | default: 'Subscribe to get special offers, free giveaways, and more.' }}</p>
+              <form class="footer-newsletter-form-{{ section.id }}" action="{{ routes.cart_url }}" method="post">
+                <input 
+                  type="email" 
+                  name="contact[email]" 
+                  class="footer-newsletter-input-{{ section.id }}"
+                  placeholder="Enter your email"
+                  required
+                >
+                <button type="submit" class="footer-newsletter-button-{{ section.id }}">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="footer-bottom-{{ section.id }}">
+      <div class="footer-copyright-{{ section.id }}">
+        © {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
+      </div>
+      <div class="footer-social-{{ section.id }}">
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="footer-social-link-{{ section.id }}">
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Footer settings"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "brand_information",
+      "name": "Brand information", 
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "default": true,
+          "label": "Show social media links"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter signup",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Newsletter",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "default": "Subscribe to get special offers, free giveaways, and more.",
+          "label": "Subtext"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list",
+        "settings": {
+          "heading": "Quick links",
+          "menu": "footer"
+        }
+      },
+      {
+        "type": "brand_information",
+        "settings": {
+          "show_social": true
+        }
+      }
+    ]
+  }
+}
+{% endschema %}
