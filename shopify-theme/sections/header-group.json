@@ -1,0 +1,35 @@
+{
+  "name": "t:sections.header-group.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to Apex Media Design - Professional Web Solutions",
+            "color_scheme": "accent-1"
+          }
+        }
+      ],
+      "block_order": ["announcement"],
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_width": 90,
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    }
+  },
+  "order": ["announcement-bar", "header"]
+}
