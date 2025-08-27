@@ -393,6 +393,138 @@
 
     {% sections 'footer-group' %}
 
+    <!-- Simple Footer -->
+    <footer class="simple-footer">
+      <div class="simple-footer-container">
+        <div class="simple-footer-content">
+          <div class="simple-footer-brand">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_webdesign-hub-3/artifacts/wlvl18ct_Apexmediadesign_logo%20%281%29.png" 
+              alt="{{ shop.name }}"
+              class="simple-footer-logo"
+              style="filter: brightness(0) invert(1);"
+            >
+            <p class="simple-footer-description">
+              Professional web design services and premium templates for modern businesses.
+            </p>
+          </div>
+          
+          <div class="simple-footer-links">
+            <h3 class="simple-footer-title">Quick Links</h3>
+            <ul class="simple-footer-list">
+              <li><a href="#home" class="simple-footer-link">Home</a></li>
+              <li><a href="#services" class="simple-footer-link">Services</a></li>
+              <li><a href="#contact" class="simple-footer-link">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="simple-footer-contact">
+            <h3 class="simple-footer-title">Contact</h3>
+            <p class="simple-footer-text">contact@apexmediadesign.com</p>
+            <p class="simple-footer-text">+1 (555) 123-4567</p>
+          </div>
+        </div>
+        
+        <div class="simple-footer-bottom">
+          <p class="simple-footer-copyright">
+            © {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .simple-footer {
+        background: rgb(17, 24, 39);
+        color: rgb(243, 244, 246);
+        padding: 3rem 0 1rem;
+      }
+
+      .simple-footer-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .simple-footer-content {
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        .simple-footer-content {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .simple-footer-logo {
+        height: 40px;
+        width: auto;
+        margin-bottom: 1rem;
+      }
+
+      .simple-footer-description {
+        color: rgb(156, 163, 175);
+        line-height: 1.6;
+      }
+
+      .simple-footer-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .simple-footer-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .simple-footer-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      .simple-footer-link {
+        color: rgb(156, 163, 175);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .simple-footer-link:hover {
+        color: #FF6B35;
+      }
+
+      .simple-footer-text {
+        color: rgb(156, 163, 175);
+        margin-bottom: 0.5rem;
+      }
+
+      .simple-footer-bottom {
+        border-top: 1px solid rgb(55, 65, 81);
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .simple-footer-copyright {
+        color: rgb(156, 163, 175);
+        margin: 0;
+      }
+
+      @media screen and (min-width: 640px) {
+        .simple-footer-container {
+          padding: 0 1.5rem;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .simple-footer-container {
+          padding: 0 2rem;
+        }
+      }
+    </style>
+
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
