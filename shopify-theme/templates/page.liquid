@@ -1,0 +1,133 @@
+{% comment %}
+  The page template is used for standard pages like About, Contact, etc.
+{% endcomment %}
+
+<div class="template-page">
+  <div class="page-width">
+    <header class="page-header">
+      <h1 class="page-title">{{ page.title }}</h1>
+    </header>
+
+    <div class="page-content">
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .template-page {
+    padding: 2rem 0;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1rem;
+  }
+  
+  .page-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .rte {
+    line-height: 1.6;
+    color: rgb(55 65 81);
+  }
+  
+  .rte h1,
+  .rte h2,
+  .rte h3,
+  .rte h4,
+  .rte h5,
+  .rte h6 {
+    margin: 2rem 0 1rem 0;
+    color: rgb(17 24 39);
+  }
+  
+  .rte h1 { font-size: 2rem; }
+  .rte h2 { font-size: 1.75rem; }
+  .rte h3 { font-size: 1.5rem; }
+  .rte h4 { font-size: 1.25rem; }
+  .rte h5 { font-size: 1.125rem; }
+  .rte h6 { font-size: 1rem; }
+  
+  .rte p {
+    margin-bottom: 1rem;
+  }
+  
+  .rte ul,
+  .rte ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+  
+  .rte li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .rte a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  
+  .rte a:hover {
+    color: var(--color-primary-dark);
+  }
+  
+  .rte img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+  
+  .rte blockquote {
+    border-left: 4px solid var(--color-primary);
+    padding-left: 1rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: rgb(75 85 99);
+  }
+  
+  .rte code {
+    background: rgb(243 244 246);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: 0.875rem;
+  }
+  
+  .rte pre {
+    background: rgb(17 24 39);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+  
+  .rte pre code {
+    background: none;
+    padding: 0;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2rem;
+    }
+    
+    .template-page {
+      padding: 1rem 0;
+    }
+  }
+</style>

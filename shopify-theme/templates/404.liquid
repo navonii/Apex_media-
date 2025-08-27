@@ -1,0 +1,55 @@
+{% comment %}
+  The 404 template is used when a page cannot be found.
+{% endcomment %}
+
+<div class="template-404">
+  <div class="page-width">
+    <div class="grid">
+      <div class="grid__item">
+        <div class="errors text-center">
+          <h1>{{ 'general.404.title' | t }}</h1>
+          <p class="errors__text">
+            {{ 'general.404.subtext_html' | t }}
+          </p>
+          <a href="{{ routes.root_url }}" class="button">
+            {{ 'general.404.link' | t }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .template-404 {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .errors {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .errors h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  
+  .errors__text {
+    font-size: 1.125rem;
+    color: rgb(75 85 99);
+    margin-bottom: 2rem;
+  }
+  
+  .button {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+  }
+</style>
